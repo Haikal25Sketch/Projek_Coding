@@ -82,13 +82,13 @@ class dompet:
 
     def __enter__(self):
         self.saldo_awal = self.__saldo
-        print ('Saldo awal :',self.saldo_awal)
+        print (f'Saldo awal {self.nama} :',self.saldo_awal)
         return self
 
     def __exit__(self,exc_type,exc_val,exc_tb):
         self.saldo_akhir = self.__saldo
         selisih = self.saldo_akhir - self.saldo_awal
-        print ('Saldo akhir :',self.saldo_akhir)
+        print (f'Saldo akhir {self.nama} :',self.saldo_akhir)
         if self.saldo_akhir >= self.saldo_awal:
             print (f'Bertambah +{selisih}')
         elif self.saldo_akhir <= self.saldo_awal:
@@ -101,7 +101,7 @@ d1.tarik(76)
 print (f'Saldo {d1.nama} :Rp.{d1.saldo}')
 print (f'Saldo {d2.nama} :Rp.{d2.saldo}')
 d1 +=8000
-print (d1.saldo)
+print (f"Saldo {d1.nama} : {d1.saldo}")
 d1.setor(8)
 d1.setor(89)
 print ('Apakah d1 dan d2 sama ?',d1 == d2)
@@ -114,4 +114,4 @@ for b in d2:
   print (b)
 
 print ('Total setor d1 :',d1.transaksi_setor())
-print (d2.saldo)
+print (f"Saldo {d2.nama} : {d2.saldo}")

@@ -45,6 +45,7 @@ class dompet:
   def __iter__(self):
     for item in self.riwayat:
       yield item
+
   def __enter__(self):
     self.saldo_awal = self._saldo
     print (f'saldo awal anda {self.saldo_awal}')
